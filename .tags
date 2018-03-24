@@ -1,0 +1,63 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DEVICE_ID	.\src\globals.h	17;"	d
+DEVICE_ID	.\src\globals.h	20;"	d
+OTA_HOST	.\src\globals.h	18;"	d
+OTA_HOST	.\src\globals.h	21;"	d
+PROGMEM	.\src\declarations.h	/^int melodyLenght PROGMEM = 56;$/;"	v
+PROGMEM	.\src\declarations.h	/^int melodyTuneTime PROGMEM = 125;$/;"	v
+PROGMEM	.\src\declarations.h	/^long melody[] PROGMEM = {NOTE_C4, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_A3 ,NOTE_A3, NOTE_A3, NOTE_A3, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_C4, NOTE_A3, NOTE_A3, NOTE_A3, NOTE_A3};$/;"	v
+Setup_h	.\src\Setup.h	2;"	d
+alarmOn	.\src\declarations.h	/^boolean alarmOn = true;$/;"	v
+alarmTimer	.\src\declarations.h	/^Ticker alarmTimer;$/;"	v
+autoActivOff	.\src\declarations.h	/^int autoActivOff = 8;$/;"	v
+autoActivOn	.\src\declarations.h	/^int autoActivOn = 22;$/;"	v
+compileDate	.\src\declarations.h	/^const char compileDate[] = __DATE__ " " __TIME__;$/;"	v
+createStatus	.\src\Subs.cpp	/^void createStatus(JsonObject& root, boolean makeShort) {$/;"	f
+debugOn	.\src\declarations.h	/^bool debugOn = false;$/;"	v
+declarations_h	.\src\declarations.h	2;"	d
+ftpSrv	.\src\declarations.h	/^FtpServer ftpSrv;$/;"	v
+functions_h	.\src\functions.h	2;"	d
+getLDR	.\src\Subs.cpp	/^boolean getLDR() {$/;"	f
+getLDRTimer	.\src\Setup.cpp	/^Ticker getLDRTimer;$/;"	v
+hasAutoActivation	.\src\declarations.h	/^boolean hasAutoActivation = false;$/;"	v
+hasDetection	.\src\declarations.h	/^boolean hasDetection = false;$/;"	v
+heartBeatTimer	.\src\Setup.cpp	/^Ticker heartBeatTimer;$/;"	v
+heartBeatTriggered	.\src\declarations.h	/^boolean heartBeatTriggered = false;$/;"	v
+host	.\src\LanSubs.cpp	/^static const char* host = "secf";$/;"	v	file:
+inSetup	.\src\declarations.h	/^boolean inSetup = true;$/;"	v
+ipAddr	.\src\declarations.h	/^	IPAddress ipAddr = ipSecFront;$/;"	v
+ipAddr	.\src\declarations.h	/^	IPAddress ipAddr = ipSpare4;$/;"	v
+lastRebootReason	.\src\declarations.h	/^String lastRebootReason = "unknown";$/;"	v
+ldrValue	.\src\declarations.h	/^int ldrValue = 0;$/;"	v
+lightLDRTriggered	.\src\declarations.h	/^boolean lightLDRTriggered = false;$/;"	v
+lightOffTriggered	.\src\declarations.h	/^boolean lightOffTriggered = false;$/;"	v
+loop	.\src\Main.cpp	/^void loop() {$/;"	f
+melodyPoint	.\src\declarations.h	/^int melodyPoint = 0;$/;"	v
+onTime	.\src\declarations.h	/^int onTime = 120;$/;"	v
+otaRunning	.\src\declarations.h	/^bool otaRunning = false;$/;"	v
+panicOn	.\src\declarations.h	/^boolean panicOn = false;$/;"	v
+pirPort	.\src\globals.h	4;"	d
+pirTrigger	.\src\Subs.cpp	/^void pirTrigger() {$/;"	f
+pirTriggered	.\src\declarations.h	/^boolean pirTriggered = false;$/;"	v
+playAlarmSound	.\src\Subs.cpp	/^void playAlarmSound() {$/;"	f
+readStatus	.\src\Subs.cpp	/^bool readStatus() {$/;"	f
+rebootReason	.\src\declarations.h	/^String rebootReason = "unknown";$/;"	v
+relayOff	.\src\Subs.cpp	/^void relayOff() {$/;"	f
+relayOffTimer	.\src\declarations.h	/^Ticker relayOffTimer;$/;"	v
+relayPort	.\src\globals.h	6;"	d
+sendAlarm	.\src\LanSubs.cpp	/^void sendAlarm(boolean makeShort) {$/;"	f
+sendLightStatus	.\src\LanSubs.cpp	/^void sendLightStatus(boolean switchOn) {$/;"	f
+setup	.\src\Setup.cpp	/^void setup() {$/;"	f
+socketServer	.\src\LanSubs.cpp	/^void socketServer(WiFiClient tcpClient) {$/;"	f
+speakerPin	.\src\globals.h	9;"	d
+switchLights	.\src\declarations.h	/^boolean switchLights = false;$/;"	v
+triggerGetLDR	.\src\Subs.cpp	/^void triggerGetLDR() {$/;"	f
+triggerHeartBeat	.\src\Subs.cpp	/^void triggerHeartBeat() {$/;"	f
+triggerPic	.\src\LanSubs.cpp	/^void triggerPic() {$/;"	f
+writeRebootReason	.\src\Subs.cpp	/^bool writeRebootReason(String message) {$/;"	f
+writeStatus	.\src\Subs.cpp	/^bool writeStatus() {$/;"	f
