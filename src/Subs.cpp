@@ -126,6 +126,18 @@ void createStatus(JsonObject& root, boolean makeShort) {
 		} else {
 			root["db"] = 0;
 		}
+
+		if (lightIp[0] != 0) {
+			root["lightIP"] = lightIp.toString();
+		}
+
+		if (secIp[0] != 0) {
+			root["secIP"] = secIp.toString();
+		}
+
+		if (camIp[0] != 0) {
+			root["camIP"] = camIp.toString();
+		}
 	}
 	if (lightID != "") {
 		root["zlight"] = lightID;

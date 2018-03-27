@@ -3,6 +3,9 @@
 /** Local name of server */
 static const char* host = "secf";
 
+/** Flag if it necessary to save changed status */
+bool needStatusSave = false;
+
 /**
  * Send broadcast message over UDP into local network
  *
@@ -69,6 +72,7 @@ void sendAlarm(boolean makeShort) {
  * 	a=3 to switch off the defined hour on/off alarm
  * 	a=4 to switch on automatic light
  * 	a=5 to switch off automatic light
+ *  a=6 to request switch light status
  *		s	to get short status message
  *		p	to switch on alarm sound (panic button function)
  *		i	to get detailed status information
@@ -123,9 +127,11 @@ void socketServer(WiFiClient tcpClient) {
 		if (req.substring(2, 3) == "0") { // Alarm off
 			alarmOn = false;
 			actLedFlashStop();
+			needStatusSave = true;
 		} else if (req.substring(2, 3) == "1") { // Alarm on
 			alarmOn = true;
 			actLedFlashStart(1);
+			needStatusSave = true;
 		} else if (req.substring(2, 3) == "2") { // Alarm auto
 			if (req.substring(3, 4) == ","
 					&& req.substring(6, 7) == ",") {
@@ -148,20 +154,25 @@ void socketServer(WiFiClient tcpClient) {
 					autoActivOff = 8;
 				}
 				hasAutoActivation = true;
-				writeStatus();
+				needStatusSave = true;
 			}
 		} else if (req.substring(2, 3) == "3") { // Alarm auto off
 			hasAutoActivation = false;
+			needStatusSave = true;
 		} else if (req.substring(2, 3) == "4") { // Auto lights on
 			if (switchLights) {
 				 return; // Auto lights already on, nothing to do
 			 }
 			switchLights = true;
+			needStatusSave = true;
 		} else if (req.substring(2, 3) == "5") { // Auto lights off
 			if (!switchLights) {
 				 return; // Auto lights already off, nothing to do
 			 }
 			switchLights = false;
+			needStatusSave = true;
+		} else if (req.substring(2, 3) == "6") { // Light status request
+			sendLightStatus(switchLights);
 		}
 		// Send back status over UDP
 		sendAlarm(true);
@@ -209,7 +220,7 @@ void socketServer(WiFiClient tcpClient) {
 		} else {
 			sendDebug("Debug over TCP is off", OTA_HOST);
 		}
-		writeStatus();
+		needStatusSave = true;
 		return;
 		// Date/time received
 	} else if (req.substring(0, 2) == "y=") {
@@ -303,6 +314,10 @@ void socketServer(WiFiClient tcpClient) {
 		delay(3000);
 		ESP.reset();
 		delay(5000);
+	}
+	// Check if it necessary to save new status
+	if (needStatusSave) {
+		writeStatus();
 	}
 }
 
